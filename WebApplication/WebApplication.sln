@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.Dal", "..\Project.Dal\Project.Dal.csproj", "{1FAD27DC-3698-436E-AA15-DAD86FEF5F6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.Domain", "..\Project.Domain\Project.Domain.csproj", "{2947F219-1A03-407E-AB9B-EA85059CF279}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.Api", "..\Project.Api\Project.Api.csproj", "{B07F7A04-228B-4764-B9DD-BFCFD5E70BF7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1FAD27DC-3698-436E-AA15-DAD86FEF5F6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FAD27DC-3698-436E-AA15-DAD86FEF5F6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FAD27DC-3698-436E-AA15-DAD86FEF5F6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FAD27DC-3698-436E-AA15-DAD86FEF5F6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2947F219-1A03-407E-AB9B-EA85059CF279}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2947F219-1A03-407E-AB9B-EA85059CF279}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2947F219-1A03-407E-AB9B-EA85059CF279}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2947F219-1A03-407E-AB9B-EA85059CF279}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B07F7A04-228B-4764-B9DD-BFCFD5E70BF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B07F7A04-228B-4764-B9DD-BFCFD5E70BF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B07F7A04-228B-4764-B9DD-BFCFD5E70BF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B07F7A04-228B-4764-B9DD-BFCFD5E70BF7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,37 @@
+2025-09-21 17:35:53.769 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-09-21 17:35:54.094 +03:00 [ERR] An unhandled exception occurred
+Npgsql.PostgresException (0x80004005): 42P01: relation "customer" does not exist
+
+POSITION: 38
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Project.Dal.Repositories.Implementations.CustomerRepository.GetByIdAsync(Int32 id) in D:\study\Net\WebAplication\Project.Dal\Repositories\Implementations\CustomerRepository.cs:line 30
+   at Project.Dal.Repositories.Implementations.CustomerRepository.GetByIdAsync(Int32 id) in D:\study\Net\WebAplication\Project.Dal\Repositories\Implementations\CustomerRepository.cs:line 41
+   at Project.Dal.Repositories.Implementations.CustomerRepository.GetByIdAsync(Int32 id) in D:\study\Net\WebAplication\Project.Dal\Repositories\Implementations\CustomerRepository.cs:line 41
+   at Project.Api.Services.CustomerService.GetCustomerByIdAsync(Int32 id, CancellationToken cancellationToken) in D:\study\Net\WebAplication\Project.Api\Services\CustomerService.cs:line 18
+   at Project.Api.Controllers.CustomersController.GetCustomer(Int32 id, CancellationToken cancellationToken) in D:\study\Net\WebAplication\Project.Api\Controllers\CustomersController.cs:line 21
+   at lambda_method11(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Project.Api.Middleware.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context) in D:\study\Net\WebAplication\Project.Api\Middleware\ExceptionHandlingMiddleware.cs:line 21
+  Exception data:
+    Severity: ERROR
+    SqlState: 42P01
+    MessageText: relation "customer" does not exist
+    Position: 38
+    File: parse_relation.c
+    Line: 1449
+    Routine: parserOpenTable
+2025-09-21 17:38:17.092 +03:00 [WRN] Failed to determine the https port for redirect.

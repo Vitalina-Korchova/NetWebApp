@@ -1,0 +1,133 @@
+using Npgsql;
+using Project.Dal.Repositories.Interfaces;
+using Project.Dal.Repositories.Implementations;
+using System.Data;
+
+namespace Project.Dal.UnitOfWork;
+
+public class UnitOfWork : IUnitOfWork
+{
+    private readonly string _connectionString;
+    private NpgsqlConnection _connection;
+    private NpgsqlTransaction _transaction;
+    
+    public ICustomerRepository Customers { get; private set; }
+    public IOrderRepository Orders { get; private set; }
+    public IOrderItemRepository OrderItems { get; private set; }
+    public IPaymentRepository Payments { get; private set; }
+
+    public UnitOfWork(string connectionString)
+    {
+        _connectionString = connectionString;
+        
+        // Ініціалізація репозиторіїв
+        Customers = new CustomerRepository(connectionString);
+        Orders = new OrderRepository(connectionString);
+        OrderItems = new OrderItemRepository(connectionString);
+        Payments = new PaymentRepository(connectionString);
+    }
+
+    public async Task BeginTransactionAsync(IsolationLevel isolationLevel = IsolationLevel.ReadCommitted)
+    {
+        if (_connection != null)
+        {
+            throw new InvalidOperationException("Transaction already started");
+        }
+
+        _connection = new NpgsqlConnection(_connectionString);
+        await _connection.OpenAsync();
+        _transaction = await _connection.BeginTransactionAsync(isolationLevel);
+
+        // Передаємо транзакцію в репозиторії, якщо вони підтримують роботу з транзакціями
+        SetTransactionForRepositories();
+    }
+
+    private void SetTransactionForRepositories()
+    {
+        // Тут можна додати логіку для передачі транзакції в репозиторії,
+        // якщо вони підтримують роботу з транзакціями
+        // Наприклад, якщо репозиторії мають метод SetTransaction()
+    }
+
+    public async Task CommitAsync()
+    {
+        if (_transaction == null)
+        {
+            throw new InvalidOperationException("No transaction to commit");
+        }
+
+        try
+        {
+            await _transaction.CommitAsync();
+        }
+        catch
+        {
+            await RollbackAsync();
+            throw;
+        }
+        finally
+        {
+            await DisposeAsync();
+        }
+    }
+
+    public async Task RollbackAsync()
+    {
+        if (_transaction == null)
+        {
+            throw new InvalidOperationException("No transaction to rollback");
+        }
+
+        try
+        {
+            await _transaction.RollbackAsync();
+        }
+        finally
+        {
+            await DisposeAsync();
+        }
+    }
+
+    public Task SaveChangesAsync()
+    {
+        // Для ADO.NET зберігання відбувається негайно, тому цей метод може бути порожнім
+        return Task.CompletedTask;
+    }
+
+    public void Dispose()
+    {
+        _transaction?.Dispose();
+        _connection?.Dispose();
+        
+        // Очищаємо посилання
+        _transaction = null;
+        _connection = null;
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        if (_transaction != null)
+        {
+            await _transaction.DisposeAsync();
+            _transaction = null;
+        }
+        
+        if (_connection != null)
+        {
+            await _connection.DisposeAsync();
+            _connection = null;
+        }
+    }
+
+    // Додатковий метод для отримання поточного з'єднання (опціонально)
+    public NpgsqlConnection GetConnection()
+    {
+        return _connection;
+    }
+
+    // Додатковий метод для отримання поточної транзакції (опціонально)
+    public NpgsqlTransaction GetTransaction()
+    {
+        return _transaction;
+    }
+}

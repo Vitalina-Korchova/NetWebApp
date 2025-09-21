@@ -1,0 +1,58 @@
+2025-09-21 11:59:47.881 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-09-21 12:01:48.249 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-09-21 15:02:48.921 +03:00 [INF] Now listening on: http://localhost:5000
+2025-09-21 15:02:48.977 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-09-21 15:02:48.981 +03:00 [INF] Hosting environment: Production
+2025-09-21 15:02:48.984 +03:00 [INF] Content root path: D:\study\Net\WebAplication\Project.Api
+2025-09-21 15:03:04.819 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-09-21 15:03:04.868 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-09-21 15:03:04.875 +03:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-09-21 15:03:04.901 +03:00 [INF] Setting HTTP status code 200.
+2025-09-21 15:03:04.959 +03:00 [INF] Writing value of type '<>f__AnonymousType2`3' as Json.
+2025-09-21 15:03:05.005 +03:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-09-21 15:03:05.012 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null application/json; charset=utf-8 197.0227ms
+2025-09-21 15:03:05.086 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico - null null
+2025-09-21 15:03:05.100 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/favicon.ico - 404 0 null 14.4644ms
+2025-09-21 15:03:05.114 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/favicon.ico, Response status code: 404
+2025-09-21 15:03:14.458 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger - null null
+2025-09-21 15:03:14.468 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger - 404 0 null 10.4673ms
+2025-09-21 15:03:14.479 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/swagger, Response status code: 404
+2025-09-21 15:03:27.660 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/customers - null null
+2025-09-21 15:03:27.668 +03:00 [INF] Executing endpoint 'Project.Api.Controllers.CustomersController.GetCustomers (Project.Api)'
+2025-09-21 15:03:27.714 +03:00 [INF] Route matched with {action = "GetCustomers", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[Project.Api.Models.DTOs.CustomerDto]]] GetCustomers(System.Threading.CancellationToken) on controller Project.Api.Controllers.CustomersController (Project.Api).
+2025-09-21 15:03:27.729 +03:00 [INF] Executed action Project.Api.Controllers.CustomersController.GetCustomers (Project.Api) in 4.2609ms
+2025-09-21 15:03:27.737 +03:00 [INF] Executed endpoint 'Project.Api.Controllers.CustomersController.GetCustomers (Project.Api)'
+2025-09-21 15:03:27.741 +03:00 [ERR] An unhandled exception occurred
+System.InvalidOperationException: Unable to resolve service for type 'Project.Api.Services.ICustomerService' while attempting to activate 'Project.Api.Controllers.CustomersController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method14(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Project.Api.Middleware.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context) in D:\study\Net\WebAplication\Project.Api\Middleware\ExceptionHandlingMiddleware.cs:line 21
+2025-09-21 15:03:27.813 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/customers - 500 null application/json; charset=utf-8 153.397ms
+2025-09-21 15:03:42.511 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger - null null
+2025-09-21 15:03:42.519 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger - 404 0 null 8.216ms
+2025-09-21 15:03:42.527 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/swagger, Response status code: 404
+2025-09-21 15:05:14.185 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/health - null null
+2025-09-21 15:05:14.192 +03:00 [INF] Executing endpoint 'HTTP: GET /health'
+2025-09-21 15:05:14.196 +03:00 [INF] Setting HTTP status code 200.
+2025-09-21 15:05:14.204 +03:00 [INF] Writing value of type '<>f__AnonymousType1`2' as Json.
+2025-09-21 15:05:14.211 +03:00 [INF] Executed endpoint 'HTTP: GET /health'
+2025-09-21 15:05:14.215 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/health - 200 null application/json; charset=utf-8 29.6595ms
+2025-09-21 15:05:28.327 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/test-db - null null
+2025-09-21 15:05:28.334 +03:00 [INF] Executing endpoint 'HTTP: GET /test-db'
+2025-09-21 15:05:28.630 +03:00 [INF] Setting HTTP status code 200.
+2025-09-21 15:05:28.634 +03:00 [INF] Writing value of type 'String' as Json.
+2025-09-21 15:05:28.638 +03:00 [INF] Executed endpoint 'HTTP: GET /test-db'
+2025-09-21 15:05:28.643 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/test-db - 200 null application/json; charset=utf-8 316.634ms
+2025-09-21 15:05:44.142 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger - null null
+2025-09-21 15:05:44.149 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger - 404 0 null 6.8256ms
+2025-09-21 15:05:44.158 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/swagger, Response status code: 404
+2025-09-21 15:08:03.978 +03:00 [INF] Application is shutting down...

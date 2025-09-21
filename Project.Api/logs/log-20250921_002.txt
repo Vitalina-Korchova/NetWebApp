@@ -1,0 +1,86 @@
+2025-09-21 17:23:15.655 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-09-21 17:23:57.512 +03:00 [ERR] An unhandled exception occurred
+System.InvalidOperationException: Unable to resolve service for type 'Project.Api.Services.ICustomerService' while attempting to activate 'Project.Api.Controllers.CustomersController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method15(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Project.Api.Middleware.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context) in D:\study\Net\WebAplication\Project.Api\Middleware\ExceptionHandlingMiddleware.cs:line 21
+2025-09-21 17:26:22.262 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-09-21 17:26:22.667 +03:00 [ERR] An unhandled exception occurred
+Npgsql.PostgresException (0x80004005): 42P01: relation "customers" does not exist
+
+POSITION: 38
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Project.Dal.Repositories.Implementations.CustomerRepository.GetByIdAsync(Int32 id) in D:\study\Net\WebAplication\Project.Dal\Repositories\Implementations\CustomerRepository.cs:line 30
+   at Project.Dal.Repositories.Implementations.CustomerRepository.GetByIdAsync(Int32 id) in D:\study\Net\WebAplication\Project.Dal\Repositories\Implementations\CustomerRepository.cs:line 41
+   at Project.Dal.Repositories.Implementations.CustomerRepository.GetByIdAsync(Int32 id) in D:\study\Net\WebAplication\Project.Dal\Repositories\Implementations\CustomerRepository.cs:line 41
+   at Project.Api.Services.CustomerService.GetCustomerByIdAsync(Int32 id, CancellationToken cancellationToken) in D:\study\Net\WebAplication\Project.Api\Services\CustomerService.cs:line 18
+   at Project.Api.Controllers.CustomersController.GetCustomer(Int32 id, CancellationToken cancellationToken) in D:\study\Net\WebAplication\Project.Api\Controllers\CustomersController.cs:line 21
+   at lambda_method11(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Project.Api.Middleware.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context) in D:\study\Net\WebAplication\Project.Api\Middleware\ExceptionHandlingMiddleware.cs:line 21
+  Exception data:
+    Severity: ERROR
+    SqlState: 42P01
+    MessageText: relation "customers" does not exist
+    Position: 38
+    File: parse_relation.c
+    Line: 1449
+    Routine: parserOpenTable
+2025-09-21 17:30:16.976 +03:00 [ERR] An unhandled exception occurred
+Npgsql.PostgresException (0x80004005): 42P01: relation "orders" does not exist
+
+POSITION: 15
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Dapper.SqlMapper.QueryRowAsync[T](IDbConnection cnn, Row row, Type effectiveType, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 489
+   at Project.Dal.Repositories.Implementations.OrderRepository.GetByIdAsync(Int32 id) in D:\study\Net\WebAplication\Project.Dal\Repositories\Implementations\OrderRepository.cs:line 23
+   at Project.Dal.Repositories.Implementations.OrderRepository.GetByIdAsync(Int32 id) in D:\study\Net\WebAplication\Project.Dal\Repositories\Implementations\OrderRepository.cs:line 23
+   at OrderService.GetOrderByIdAsync(Int32 id, CancellationToken cancellationToken) in D:\study\Net\WebAplication\Project.Api\Services\OrderService.cs:line 18
+   at Project.Api.Controllers.OrdersController.GetOrder(Int32 id, CancellationToken cancellationToken) in D:\study\Net\WebAplication\Project.Api\Controllers\OrdersController.cs:line 21
+   at lambda_method19(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Project.Api.Middleware.ExceptionHandlingMiddleware.InvokeAsync(HttpContext context) in D:\study\Net\WebAplication\Project.Api\Middleware\ExceptionHandlingMiddleware.cs:line 21
+  Exception data:
+    Severity: ERROR
+    SqlState: 42P01
+    MessageText: relation "orders" does not exist
+    Position: 15
+    File: parse_relation.c
+    Line: 1449
+    Routine: parserOpenTable
