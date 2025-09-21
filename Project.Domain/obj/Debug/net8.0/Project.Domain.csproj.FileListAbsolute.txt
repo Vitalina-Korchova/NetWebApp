@@ -9,3 +9,4 @@ D:\study\Net\WebAplication\Project.Domain\obj\Debug\net8.0\Project.Domain.dll
 D:\study\Net\WebAplication\Project.Domain\obj\Debug\net8.0\refint\Project.Domain.dll
 D:\study\Net\WebAplication\Project.Domain\obj\Debug\net8.0\Project.Domain.pdb
 D:\study\Net\WebAplication\Project.Domain\obj\Debug\net8.0\ref\Project.Domain.dll
+D:\study\Net\WebAplication\Project.Domain\obj\Debug\net8.0\Project.Domain.sourcelink.json

@@ -9,5 +9,6 @@ public interface IPaymentService
     Task<PaymentDto> GetPaymentByOrderIdAsync(int orderId, CancellationToken cancellationToken = default);
     Task<PaymentDto> CreatePaymentAsync(CreatePaymentDto createPaymentDto, CancellationToken cancellationToken = default);
     Task UpdatePaymentStatusAsync(int paymentId, string status, CancellationToken cancellationToken = default);
+    Task UpdatePaymentAsync(int paymentId, UpdatePaymentDto updatePaymentDto, CancellationToken cancellationToken = default);
     Task DeletePaymentAsync(int id, CancellationToken cancellationToken = default);
 }

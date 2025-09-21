@@ -1,16 +1,19 @@
 using Project.Api.Models.DTOs;
 using Project.Api.Services;
+using Project.Dal.Repositories.Interfaces;
 using Project.Dal.UnitOfWork;
 using Project.Domain.Models;
 
 public class OrderService : IOrderService
 {
     private readonly IUnitOfWork _unitOfWork;
+   
 
     public OrderService(IUnitOfWork unitOfWork)
     {
         _unitOfWork = unitOfWork;
     }
+   
 
     public async Task<OrderDto> GetOrderByIdAsync(int id, CancellationToken cancellationToken = default)
     {
@@ -22,6 +25,21 @@ public class OrderService : IOrderService
         return MapToDto(order, orderItems);
     }
 
+    public async Task<IEnumerable<OrderDto>> GetAllOrdersAsync(CancellationToken cancellationToken = default)
+    {
+        var orders = await _unitOfWork.Orders.GetAllAsync();
+        var orderDtos = new List<OrderDto>();
+
+        foreach (var order in orders)
+        {
+            var orderDto = await GetOrderWithItemsAsync(order);
+            orderDtos.Add(orderDto);
+        }
+
+        return orderDtos;
+    }
+
+    
     public async Task<IEnumerable<OrderDto>> GetOrdersByCustomerIdAsync(int customerId, CancellationToken cancellationToken = default)
     {
         var orders = await _unitOfWork.Orders.GetByCustomerIdAsync(customerId);
@@ -81,6 +99,48 @@ public class OrderService : IOrderService
         }
     }
 
+    public async Task UpdateOrderAsync(int orderId, UpdateOrderDto updateOrderDto, CancellationToken cancellationToken = default)
+    {
+        try
+        {
+            await _unitOfWork.BeginTransactionAsync();
+
+            var order = await _unitOfWork.Orders.GetByIdAsync(orderId);
+            if (order == null)
+                throw new ArgumentException("Order not found");
+
+            order.customer_id = updateOrderDto.CustomerId;
+            order.status = updateOrderDto.Status;
+            order.total_amount = updateOrderDto.TotalAmount;
+            order.order_date = updateOrderDto.OrderDate;
+            order.updated_at = DateTime.UtcNow;
+
+            await _unitOfWork.Orders.UpdateAsync(order);
+
+            // Оновлюємо items (спочатку видаляємо старі, потім додаємо нові)
+            await _unitOfWork.OrderItems.DeleteByOrderIdAsync(orderId);
+            
+            foreach (var itemDto in updateOrderDto.Items)
+            {
+                var orderItem = new OrderItem
+                {
+                    order_id = orderId,
+                    product_id = itemDto.ProductId,
+                    quantity = itemDto.Quantity,
+                    
+                };
+                await _unitOfWork.OrderItems.AddAsync(orderItem);
+            }
+
+            await _unitOfWork.CommitAsync();
+        }
+        catch
+        {
+            await _unitOfWork.RollbackAsync();
+            throw;
+        }
+    }
+    
     public async Task UpdateOrderStatusAsync(int orderId, string status, CancellationToken cancellationToken = default)
     {
         await _unitOfWork.Orders.UpdateStatusAsync(orderId, status);
@@ -107,6 +167,22 @@ public class OrderService : IOrderService
         }
     }
 
+    private async Task<OrderDto> GetOrderWithItemsAsync(Order order)
+    {
+        var items = await _unitOfWork.OrderItems.GetByOrderIdAsync(order.order_id);
+        
+        return new OrderDto
+        {
+            OrderId = order.order_id,
+            CustomerId = order.customer_id,
+            Status = order.status,
+            TotalAmount = order.total_amount,
+            OrderDate = order.order_date,
+            UpdatedAt = order.updated_at,
+            Items = items.Select(MapItemToDto).ToList()
+        };
+    }
+    
     private OrderDto MapToDto(Order order, IEnumerable<OrderItem> orderItems = null)
     {
         var dto = new OrderDto
@@ -129,5 +205,16 @@ public class OrderService : IOrderService
         }
 
         return dto;
+    }
+    
+    private OrderItemDto MapItemToDto(OrderItem item)
+    {
+        return new OrderItemDto
+        {
+           
+            ProductId = item.product_id,
+            Quantity = item.quantity,
+            
+        };
     }
 }

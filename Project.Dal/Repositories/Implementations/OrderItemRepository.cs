@@ -82,7 +82,7 @@ public class OrderItemRepository : IOrderItemRepository
     {
         await using var connection = new NpgsqlConnection(_connectionString);
         await connection.ExecuteAsync(
-            "UPDATE order_items SET quantity = @quantity WHERE order_item_id = @orderItemId",
+            "UPDATE order_item SET quantity = @quantity WHERE order_item_id = @orderItemId",
             new { orderItemId, quantity });
     }
 
@@ -90,7 +90,7 @@ public class OrderItemRepository : IOrderItemRepository
     {
         await using var connection = new NpgsqlConnection(_connectionString);
         await connection.ExecuteAsync(
-            "DELETE FROM order_items WHERE order_item_id = @id",
+            "DELETE FROM order_item WHERE order_item_id = @id",
             new { id });
     }
 
@@ -98,7 +98,7 @@ public class OrderItemRepository : IOrderItemRepository
     {
         await using var connection = new NpgsqlConnection(_connectionString);
         await connection.ExecuteAsync(
-            "DELETE FROM order_items WHERE order_id = @orderId",
+            "DELETE FROM order_item WHERE order_id = @orderId",
             new { orderId });
     }
 
@@ -106,7 +106,7 @@ public class OrderItemRepository : IOrderItemRepository
     {
         await using var connection = new NpgsqlConnection(_connectionString);
         return await connection.ExecuteScalarAsync<int>(
-            "SELECT COALESCE(SUM(quantity), 0) FROM order_items WHERE product_id = @productId",
+            "SELECT COALESCE(SUM(quantity), 0) FROM order_item WHERE product_id = @productId",
             new { productId });
     }
 }

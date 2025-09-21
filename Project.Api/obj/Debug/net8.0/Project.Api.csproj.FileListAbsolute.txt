@@ -156,3 +156,4 @@ D:\study\Net\WebAplication\Project.Api\bin\Debug\net8.0\Swashbuckle.AspNetCore.S
 D:\study\Net\WebAplication\Project.Api\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\study\Net\WebAplication\Project.Api\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 D:\study\Net\WebAplication\Project.Api\obj\Debug\net8.0\Project.Api.MvcApplicationPartsAssemblyInfo.cs
+D:\study\Net\WebAplication\Project.Api\obj\Debug\net8.0\Project.Api.sourcelink.json

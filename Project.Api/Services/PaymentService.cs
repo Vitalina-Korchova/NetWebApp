@@ -58,6 +58,21 @@ public class PaymentService : IPaymentService
         await _unitOfWork.Payments.UpdateStatusAsync(paymentId, status);
     }
 
+    public async Task UpdatePaymentAsync(int paymentId, UpdatePaymentDto updatePaymentDto, CancellationToken cancellationToken = default)
+    {
+        var payment = await _unitOfWork.Payments.GetByIdAsync(paymentId);
+        if (payment == null)
+            throw new KeyNotFoundException($"Payment with ID {paymentId} not found");
+
+        payment.order_id = updatePaymentDto.OrderId;
+        payment.amount = updatePaymentDto.Amount;
+        payment.payment_status = updatePaymentDto.PaymentStatus;
+        payment.transaction_id = updatePaymentDto.TransactionId;
+        payment.updated_at = DateTime.UtcNow;
+
+        await _unitOfWork.Payments.UpdateAsync(payment);
+    }
+    
     public async Task DeletePaymentAsync(int id, CancellationToken cancellationToken = default)
     {
         await _unitOfWork.Payments.DeleteAsync(id);

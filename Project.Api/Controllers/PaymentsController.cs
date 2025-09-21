@@ -15,6 +15,13 @@ public class PaymentsController : ControllerBase
         _paymentService = paymentService;
     }
 
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<PaymentDto>>> GetAllPayments(CancellationToken cancellationToken)
+    {
+        var payments = await _paymentService.GetAllPaymentsAsync(cancellationToken);
+        return Ok(payments);
+    }
+    
     [HttpGet("{id}")]
     public async Task<ActionResult<PaymentDto>> GetPayment(int id, CancellationToken cancellationToken)
     {
@@ -25,13 +32,7 @@ public class PaymentsController : ControllerBase
         return Ok(payment);
     }
 
-    [HttpGet]
-    public async Task<ActionResult<IEnumerable<PaymentDto>>> GetPayments(CancellationToken cancellationToken)
-    {
-        var payments = await _paymentService.GetAllPaymentsAsync(cancellationToken);
-        return Ok(payments);
-    }
-
+    
     [HttpGet("order/{orderId}")]
     public async Task<ActionResult<PaymentDto>> GetPaymentByOrder(int orderId, CancellationToken cancellationToken)
     {
@@ -49,6 +50,20 @@ public class PaymentsController : ControllerBase
         return CreatedAtAction(nameof(GetPayment), new { id = payment.PaymentId }, payment);
     }
 
+    [HttpPut("{id}")]
+    public async Task<IActionResult> UpdatePayment(int id, [FromBody] UpdatePaymentDto updatePaymentDto, CancellationToken cancellationToken)
+    {
+        try
+        {
+            await _paymentService.UpdatePaymentAsync(id, updatePaymentDto, cancellationToken);
+            return NoContent();
+        }
+        catch (KeyNotFoundException)
+        {
+            return NotFound();
+        }
+    }
+    
     [HttpPatch("{id}/status")]
     public async Task<IActionResult> UpdatePaymentStatus(int id, [FromBody] UpdatePaymentStatusDto updateDto, CancellationToken cancellationToken)
     {

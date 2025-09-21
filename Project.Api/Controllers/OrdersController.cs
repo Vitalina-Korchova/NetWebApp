@@ -15,6 +15,13 @@ public class OrdersController : ControllerBase
         _orderService = orderService;
     }
 
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<OrderDto>>> GetAllOrders(CancellationToken cancellationToken)
+    {
+        var orders = await _orderService.GetAllOrdersAsync(cancellationToken);
+        return Ok(orders);
+    }
+    
     [HttpGet("{id}")]
     public async Task<ActionResult<OrderDto>> GetOrder(int id, CancellationToken cancellationToken)
     {
@@ -37,6 +44,13 @@ public class OrdersController : ControllerBase
     {
         var order = await _orderService.CreateOrderAsync(createOrderDto, cancellationToken);
         return CreatedAtAction(nameof(GetOrder), new { id = order.OrderId }, order);
+    }
+
+    [HttpPut("{id}")]
+    public async Task<IActionResult> UpdateOrder(int id, [FromBody] UpdateOrderDto updateOrderDto, CancellationToken cancellationToken)
+    {
+        await _orderService.UpdateOrderAsync(id, updateOrderDto, cancellationToken);
+        return NoContent();
     }
 
     [HttpPatch("{id}/status")]

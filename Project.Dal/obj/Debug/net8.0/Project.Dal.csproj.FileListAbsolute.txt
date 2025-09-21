@@ -13,3 +13,4 @@ D:\study\Net\WebAplication\Project.Dal\obj\Debug\net8.0\Project.Dal.dll
 D:\study\Net\WebAplication\Project.Dal\obj\Debug\net8.0\refint\Project.Dal.dll
 D:\study\Net\WebAplication\Project.Dal\obj\Debug\net8.0\Project.Dal.pdb
 D:\study\Net\WebAplication\Project.Dal\obj\Debug\net8.0\ref\Project.Dal.dll
+D:\study\Net\WebAplication\Project.Dal\obj\Debug\net8.0\Project.Dal.sourcelink.json
