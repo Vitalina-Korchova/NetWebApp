@@ -12,9 +12,5 @@ public interface IOrderRepository
     Task UpdateAsync(Order order);
     Task UpdateStatusAsync(int orderId, string status);
     Task DeleteAsync(int id);
-    Task<decimal> GetTotalRevenueAsync(DateTime startDate, DateTime endDate);
-    
-    Task<int> BulkUpdateStatusAsync(IEnumerable<int> orderIds, string status);
-    Task<dynamic> GetOrderStatisticsAsync();
-    Task<bool> ValidateOrderBeforeUpdateAsync(int orderId);
+
 }

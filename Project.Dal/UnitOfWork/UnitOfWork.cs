@@ -38,16 +38,10 @@ public class UnitOfWork : IUnitOfWork
         await _connection.OpenAsync();
         _transaction = await _connection.BeginTransactionAsync(isolationLevel);
 
-        // Передаємо транзакцію в репозиторії, якщо вони підтримують роботу з транзакціями
-        SetTransactionForRepositories();
+        
     }
 
-    private void SetTransactionForRepositories()
-    {
-        // Тут можна додати логіку для передачі транзакції в репозиторії,
-        // якщо вони підтримують роботу з транзакціями
-        // Наприклад, якщо репозиторії мають метод SetTransaction()
-    }
+ 
 
     public async Task CommitAsync()
     {
@@ -90,16 +84,17 @@ public class UnitOfWork : IUnitOfWork
 
     public Task SaveChangesAsync()
     {
-        // Для ADO.NET зберігання відбувається негайно, тому цей метод може бути порожнім
+      
         return Task.CompletedTask;
     }
 
+    //правильне закриття з'єднання
     public void Dispose()
     {
         _transaction?.Dispose();
         _connection?.Dispose();
         
-        // Очищаємо посилання
+        // Очищає посилання
         _transaction = null;
         _connection = null;
     }
@@ -118,14 +113,12 @@ public class UnitOfWork : IUnitOfWork
             _connection = null;
         }
     }
-
-    // Додатковий метод для отримання поточного з'єднання (опціонально)
+    
     public NpgsqlConnection GetConnection()
     {
         return _connection;
     }
-
-    // Додатковий метод для отримання поточної транзакції (опціонально)
+    
     public NpgsqlTransaction GetTransaction()
     {
         return _transaction;

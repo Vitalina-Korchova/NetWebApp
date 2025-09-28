@@ -60,8 +60,8 @@ public class OrderService : IOrderService
         {
             await _unitOfWork.BeginTransactionAsync();
 
-            // Просто вказуємо фіксовану суму або 0, оскільки цін продуктів немає
-            decimal totalAmount = 0; // Або createOrderDto.Items.Sum(item => item.Quantity * 1) для фіксованої ціни
+           
+            decimal totalAmount = 0; 
 
             var order = new Order
             {
@@ -74,7 +74,7 @@ public class OrderService : IOrderService
 
             await _unitOfWork.Orders.AddAsync(order);
 
-            // Додаємо товари до замовлення
+            // додати товари до замовлення
             foreach (var itemDto in createOrderDto.Items)
             {
                 var orderItem = new OrderItem
@@ -88,7 +88,7 @@ public class OrderService : IOrderService
 
             await _unitOfWork.CommitAsync();
 
-            // Отримуємо додані товари для повернення в DTO
+           
             var orderItems = await _unitOfWork.OrderItems.GetByOrderIdAsync(order.order_id);
             return MapToDto(order, orderItems);
         }
@@ -117,7 +117,7 @@ public class OrderService : IOrderService
 
             await _unitOfWork.Orders.UpdateAsync(order);
 
-            // Оновлюємо items (спочатку видаляємо старі, потім додаємо нові)
+            // Оновлююitems (спочатку видаляєюстарі, потім додаю нові)
             await _unitOfWork.OrderItems.DeleteByOrderIdAsync(orderId);
             
             foreach (var itemDto in updateOrderDto.Items)
@@ -152,10 +152,10 @@ public class OrderService : IOrderService
         {
             await _unitOfWork.BeginTransactionAsync();
             
-            // Спочатку видаляємо товари замовлення
+            //  видалення товари замовлення
             await _unitOfWork.OrderItems.DeleteByOrderIdAsync(id);
             
-            // Потім видаляємо саме замовлення
+            // видалення самого замовлення
             await _unitOfWork.Orders.DeleteAsync(id);
             
             await _unitOfWork.CommitAsync();

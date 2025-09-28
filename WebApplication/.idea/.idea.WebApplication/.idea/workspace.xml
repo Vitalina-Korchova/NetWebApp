@@ -14,12 +14,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0fe3a2cf-148e-45f9-a72a-f2e2bc14789c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Project.Api/Controllers/OrdersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Api/Controllers/OrdersController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Project.Api/Controllers/PaymentsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Api/Controllers/PaymentsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Project.Api/Services/IOrderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Api/Services/IOrderService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Project.Api/Services/IPaymentService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Api/Services/IPaymentService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project.Api/Services/OrderService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Api/Services/OrderService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Project.Api/Services/PaymentService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Api/Services/PaymentService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project.Api/bin/Debug/net8.0/Project.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Api/bin/Debug/net8.0/Project.Api.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project.Api/bin/Debug/net8.0/Project.Api.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Api/bin/Debug/net8.0/Project.Api.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project.Api/bin/Debug/net8.0/Project.Api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Api/bin/Debug/net8.0/Project.Api.pdb" afterDir="false" />
@@ -27,17 +22,17 @@
       <change beforePath="$PROJECT_DIR$/../Project.Api/bin/Debug/net8.0/Project.Dal.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Api/bin/Debug/net8.0/Project.Dal.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project.Api/bin/Debug/net8.0/Project.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Api/bin/Debug/net8.0/Project.Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project.Api/bin/Debug/net8.0/Project.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Api/bin/Debug/net8.0/Project.Domain.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Project.Api/logs/log-20250921_008.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Api/logs/log-20250921_008.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project.Api/obj/Debug/net8.0/Project.Api.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Api/obj/Debug/net8.0/Project.Api.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project.Api/obj/Debug/net8.0/Project.Api.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Api/obj/Debug/net8.0/Project.Api.AssemblyInfoInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project.Api/obj/Debug/net8.0/Project.Api.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Api/obj/Debug/net8.0/Project.Api.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Project.Api/obj/Debug/net8.0/Project.Api.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Api/obj/Debug/net8.0/Project.Api.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project.Api/obj/Debug/net8.0/Project.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Api/obj/Debug/net8.0/Project.Api.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project.Api/obj/Debug/net8.0/Project.Api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Api/obj/Debug/net8.0/Project.Api.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project.Api/obj/Debug/net8.0/Project.Api.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Api/obj/Debug/net8.0/Project.Api.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project.Api/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Api/obj/Debug/net8.0/apphost.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project.Api/obj/Debug/net8.0/ref/Project.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Api/obj/Debug/net8.0/ref/Project.Api.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project.Api/obj/Debug/net8.0/refint/Project.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Api/obj/Debug/net8.0/refint/Project.Api.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Project.Dal/Repositories/Implementations/OrderItemRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Dal/Repositories/Implementations/OrderItemRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project.Dal/Repositories/Interfaces/IOrderRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Dal/Repositories/Interfaces/IOrderRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project.Dal/UnitOfWork/UnitOfWork.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Dal/UnitOfWork/UnitOfWork.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project.Dal/bin/Debug/net8.0/Project.Dal.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Dal/bin/Debug/net8.0/Project.Dal.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project.Dal/bin/Debug/net8.0/Project.Dal.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Dal/bin/Debug/net8.0/Project.Dal.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project.Dal/bin/Debug/net8.0/Project.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Dal/bin/Debug/net8.0/Project.Domain.dll" afterDir="false" />
@@ -45,23 +40,22 @@
       <change beforePath="$PROJECT_DIR$/../Project.Dal/obj/Debug/net8.0/Project.Dal.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Dal/obj/Debug/net8.0/Project.Dal.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project.Dal/obj/Debug/net8.0/Project.Dal.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Dal/obj/Debug/net8.0/Project.Dal.AssemblyInfoInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project.Dal/obj/Debug/net8.0/Project.Dal.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Dal/obj/Debug/net8.0/Project.Dal.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Project.Dal/obj/Debug/net8.0/Project.Dal.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Dal/obj/Debug/net8.0/Project.Dal.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project.Dal/obj/Debug/net8.0/Project.Dal.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Dal/obj/Debug/net8.0/Project.Dal.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project.Dal/obj/Debug/net8.0/Project.Dal.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Dal/obj/Debug/net8.0/Project.Dal.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project.Dal/obj/Debug/net8.0/Project.Dal.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Dal/obj/Debug/net8.0/Project.Dal.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project.Dal/obj/Debug/net8.0/ref/Project.Dal.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Dal/obj/Debug/net8.0/ref/Project.Dal.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project.Dal/obj/Debug/net8.0/refint/Project.Dal.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Dal/obj/Debug/net8.0/refint/Project.Dal.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Project.Domain/Models/DTOs/OrderDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Domain/Models/DTOs/OrderDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Project.Domain/Models/DTOs/PaymentDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Domain/Models/DTOs/PaymentDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project.Domain/bin/Debug/net8.0/Project.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Domain/bin/Debug/net8.0/Project.Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project.Domain/bin/Debug/net8.0/Project.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Domain/bin/Debug/net8.0/Project.Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project.Domain/obj/Debug/net8.0/Project.Domain.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Domain/obj/Debug/net8.0/Project.Domain.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project.Domain/obj/Debug/net8.0/Project.Domain.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Domain/obj/Debug/net8.0/Project.Domain.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Project.Domain/obj/Debug/net8.0/Project.Domain.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Domain/obj/Debug/net8.0/Project.Domain.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project.Domain/obj/Debug/net8.0/Project.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Domain/obj/Debug/net8.0/Project.Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project.Domain/obj/Debug/net8.0/Project.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Domain/obj/Debug/net8.0/Project.Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Project.Domain/obj/Debug/net8.0/Project.Domain.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Domain/obj/Debug/net8.0/Project.Domain.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project.Domain/obj/Debug/net8.0/ref/Project.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Domain/obj/Debug/net8.0/ref/Project.Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project.Domain/obj/Debug/net8.0/refint/Project.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Project.Domain/obj/Debug/net8.0/refint/Project.Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WebApplication/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebApplication/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApplication.sln" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication.sln" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,40 +65,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/../Project.Api/Controllers/CustomersController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../Project.Api/Controllers/OrdersController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../Project.Api/Controllers/PaymentsController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../Project.Api/Middleware/ExceptionHandlingMiddleware.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../Project.Api/Services/CustomerService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../Project.Api/Services/ICustomerService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../Project.Api/Services/IOrderService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../Project.Api/Services/IPaymentService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../Project.Api/Services/OrderService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../Project.Api/Services/PaymentService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../Project.Dal/Class1.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../Project.Dal/Repositories/Implementations/CustomerRepository.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../Project.Dal/Repositories/Implementations/OrderItemRepository.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../Project.Dal/Repositories/Implementations/OrderRepository.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../Project.Dal/Repositories/Implementations/PaymentRepository.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../Project.Dal/Repositories/Interfaces/ICustomerRepository.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../Project.Dal/Repositories/Interfaces/IOrderItemRepository.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../Project.Dal/Repositories/Interfaces/IOrderRepository.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../Project.Dal/Repositories/Interfaces/IPaymentRepository.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../Project.Dal/UnitOfWork/IUnitOfWork.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../Project.Dal/UnitOfWork/UnitOfWork.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../Project.Domain/Class1.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../Project.Domain/Models/Customer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../Project.Domain/Models/DTOs/CustomerDto.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../Project.Domain/Models/DTOs/OrderDto.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../Project.Domain/Models/DTOs/OrderItemDto.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../Project.Domain/Models/DTOs/PaymentDto.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../Project.Domain/Models/Order.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../Project.Domain/Models/OrderItem.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../Project.Domain/Models/Payment.cs" root0="FORCE_HIGHLIGHTING" />
-  </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="Toolset" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -115,23 +81,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.Project.Api: http.executor": "Run",
-    ".NET Launch Settings Profile.Project.Api: https.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "RiderNuGetOptionsPageId",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.Project.Api: http.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Launch Settings Profile.Project.Api: https.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;RiderNuGetOptionsPageId&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Project.Api: http">
     <configuration name="Project.Api" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -281,7 +248,13 @@
       <workItem from="1758396822056" duration="780000" />
       <workItem from="1758443691707" duration="1563000" />
       <workItem from="1758451608065" duration="4845000" />
-      <workItem from="1758464372350" duration="6286000" />
+      <workItem from="1758464372350" duration="6459000" />
+      <workItem from="1758561770958" duration="83000" />
+      <workItem from="1758620016062" duration="3534000" />
+      <workItem from="1759071874498" duration="1526000" />
+      <workItem from="1759080896871" duration="15000" />
+      <workItem from="1759080951325" duration="442000" />
+      <workItem from="1759081426747" duration="67000" />
     </task>
     <servers />
   </component>
